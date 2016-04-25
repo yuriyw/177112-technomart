@@ -1,12 +1,306 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
   </head>
   <body>
+    <header class="siteHeader">
+        <div class="siteHeaderTop">
+            <div class="centeredContainer">
+                <div class="leftAligned">
+                    <a href="#" class="headerHomeLink">Техномарт</a>
+                    <button href="#" class="headerSearchButton">Поиск:</button>
+                </div>
+                <ul class="rightAligned">
+                    <li>
+                        <a href="#" class="headerBookmarksLink">Закладки: <span id="bokmarkCount">0</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="headerCartLink">Корзина: <span id="cartCount">0</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="checkOutLink">Оформить заказ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="siteHeaderMain">
+            <div class="centeredContainer">
+                <div class="siteHeaderMiddle">
+                    <section class="redText">
+                        <em>Интернет-магазин строительных материалов и инструментов для ремонта.</em>
+                    </section>
+                    <section>
+                        <a href="tel:78125550555" class="redText headerPhoneLink">+7 (812) 555-05-55</a>
+                        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+                    </section>
+                    <div>
+                        <a href="#" class="btn headerBtn loginBtn">Войти</a>
+                        <a href="#" class="btn headerBtn">Регистрация</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="siteHeaderNav">
+                <ul>
+                    <li>
+                        <a href="#">Главная</a>
+                    </li>
+                    <li>
+                        <a href="#">Компания</a>
+                    </li>
+                    <li>
+                        <a href="#">Каталог</a>
+                    </li>
+                    <li>
+                        <a href="#">Новости</a>
+                    </li>
+                    <li>
+                        <a href="#">Спецпредложения</a>
+                    </li>
+                    <li>
+                        <a href="#">Доставка</a>
+                    </li>
+                    <li>
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="centeredContainer">
+            <!--
+            Здесь я не совсем понял структуру. Зачем, например, в прямоугольнике "Материалы" стоит кнопка "на любой вкус".
+            Дизайнерски это симпатично. Но функционально --- что это? Ссылка внутри ссылки?
+            Покамест рутинно решил, что ссылка --- только кнопка, а не весь прямоугольник.
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Базовый HTML и CSS</a>».</p>
+            Большая картинка идёт с классом selectedCategoryItem и, наверное, будет иметь rowspan и colspan.
+            -->
+            <div class="categoriesTable">
+                <div class="categoriesRow">
+                    <div class="categoryItem materialsCategoryItem new">
+                        <h3>Материалы</h3>
+                        <a href="#" class="btn darkened">На любой вкус</a>
+                    </div>
+                    <div class="categoryItem toolsCategoryItem">
+                        <h3>Инструмент</h3>
+                        <a href="#" class="btn darkened">На все случаи</a>
+                    </div>
+                    <div class="categoryItem technicsCategoryItem">
+                        <h3>Техника</h3>
+                        <a href="#" class="btn darkened">Для стройки</a>
+                    </div>
 
+                    <div class="categoryItem selectedCategoryItem">
+                        <!-- Здесь я не был уверен, не поставить ли картинку фоном. -->
+                        <img src="img\categories\Perforators.jpg" class="categoryImage" />
+                        <div class="selectedCategoryItemTop darkened">
+                            <h2>Перфораторы</h2>
+                            <p>Настоящие мужские игрушки</p>
+                        </div>
+                        <div class="categoryPaginator">
+                            <a href="#" class="previous"><</a>
+                            <a href="#" class="next">></a>
+                        </div>
+                        <a href="#" class="btn redBtn">Открыть каталог</a>
+                    </div>
+
+                    <div class="categoryItem discountsCategoryItem">
+                        <h3>Скидки 50%</h3>
+                        <a href="#" class="btn darkened">На 350 товаров</a>
+                    </div>
+                    <div class="categoryItem deliveryCategoryItem">
+                        <h3>Доставка</h3>
+                        <a href="#" class="btn darkened">Бесплатно</a>
+                    </div>
+                </div>
+            </div>
+            <section class="gallerySection">
+                <div class="gallerySectionHeader">
+                    <h2>Популярные товары</h2>
+                    <a href="#" class="btn redBtn">Все популярные товары</a>
+                </div>
+                <article class="galleryItem">
+                    <a href="#">
+                        <img src="img\stock\BoschBFG9000.jpg" />
+                    </a>
+                    <a href="#">Перфоратор BOSCH BFG 9000</a>
+                    <p class="formerPrice">32 500 p.</p>
+                    <div class="discountPrice">25 500 p.</div>
+                </article>
+                <article class="galleryItem">
+                    <a href="#">
+                        <img src="img\stock\BoschBFG3000.jpg" />
+                    </a>
+                    <a href="#">Перфоратор BOSCH BFG 9000</a>
+                    <p class="formerPrice">22 500 p.</p>
+                    <div class="discountPrice">15 500 p.</div>
+                </article>
+                <article class="galleryItem">
+                    <a href="#">
+                        <img src="img\stock\BoschBFG6000.jpg" />
+                    </a>
+                    <a href="#">Перфоратор BOSCH BFG 6000</a>
+                    <p class="formerPrice">30 500 p.</p>
+                    <div class="discountPrice">25 500 p.</div>
+                </article>
+                <article class="galleryItem new">
+                    <a href="#">
+                        <img src="img\stock\BoschBFG2000.jpg" />
+                    </a>
+                    <a href="#">Перфоратор BOSCH BFG 2000</a>
+                    <div class="discountPrice">12 500 p.</div>
+                </article>
+            </section>
+            <section class="gallerySection">
+                <div class="gallerySectionHeader">
+                    <h2>Популярные производители</h2>
+                    <a href="#" class="btn redBtn">Все производители</a>
+                </div>
+                <!-- Тут пока не стал ни делать <ul>, ни оборачивать каждую ссылку в <div> --- хотя были обе мысли. -->
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\Bosch.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\Makita.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\DeWalt.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\Interskon.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\Hitachi.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\LG.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\AEG.jpg" />
+                </a>
+                <a href="#" class="galleryItem">
+                    <img src="img\logos\Metabo.jpg" />
+                </a>
+            </section>
+        </div> <!-- End of centeredContainer -->
+        <section class="servicesBlock">
+            <div class="leftAligned">
+                <h2>Сервисы</h2>
+                <p>Хороший интернет-магазин отличается от плохого не только ценами! 
+                    Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
+                <div class="serviceSpheres">
+                    <ul class="serviceSpheresList">
+                        <!-- Хотел попробовать выбор аттрибутом (selected) --- так ведь тоже можно, да? -->
+                        <li selected>Доставка</li>
+                        <li>Гарантия</li>
+                        <li>Кредит</li>
+                    </ul>
+                    <div>
+                        <h2>Доставка</h2>
+                        <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! 
+                            Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="centeredContainer">
+            <section class="leftAligned">
+                <h2>Компания "Техномарт"</h2>
+                <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит 
+                   равнодушными любителей сэкономить на гастарбайтерах.</p>
+                <div class="deliveryBlock">
+                    <p>Мы можем доставить ваш товар в самые отдалённые точки России!
+                       Техномарт работает со многими транспортными компаниями:</p>
+                    <ul class="deliveryList">
+                        <li>Деловые линии</li>
+                        <li>Авторейдинг</li>
+                        <li>ЖелДорЭкспедиция</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn redBtn">Подробнее о компании</a>
+            </section>
+            <section class="rightAligned">
+                <h2>Контакты</h2>
+                <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+                <!-- Тут надо ставить контроль Google maps --- позже сделаю -->
+                <a href="#" class="btn redBtn">Заблудились? Напишите нам!</a>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footerTop">
+            <div class="centeredContainer">
+                <div class="leftAligned">
+                    <a href="#" class="footerHomeLink">Техномарт</a>
+                    <section>
+                        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+                        <a href="tel:78125550555">+7 (812) 555-05-55</a>
+                    </section>
+                </div>
+                <div class="rightAligned">
+                    <ul class="footerUpperLinkList">
+                        <li>
+                            <a href="#">Компания</a>
+                        </li>
+                        <li>
+                            <a href="#">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#">Каталог</a>
+                        </li>
+                        <li>
+                            <a href="#">Доставка</a>
+                        </li>
+                        <li>
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <ul class="footerLowerLinkList">
+                        <li>
+                            <a href="#">Материалы</a>
+                        </li>
+                        <li>
+                            <a href="#">Техника</a>
+                        </li>
+                        <li>
+                            <a href="#">Инструмент</a>
+                        </li>
+                        <li>
+                            <a href="#">Спецпредложения</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <section class="footerCopyright">
+                &copy;2010-2016 Компания "Техномарт"<br />
+                Все права защищены
+            </section>
+            <ul class="socialList">
+                <li class="socialBtn">
+                    <a class="socialBtnVK" href="#">Вконтакте</a>
+                </li>
+                <li class="socialBtn">
+                    <a class="socialBtn socialBtnFB" href="#">Фейсбук</a>
+                </li>
+                <li class="socialBtn">
+                    <a class="socialBtn socialBtnINST" href="#">Инстаграм</a>
+                </li>
+            </ul>
+            <section class="footerDeveloperContacts">
+                <div class="leftAligned">
+                    <p>Обратная связь:</p>
+                    <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+                </div>
+                <div class="rightAligned">
+                    <p>Разработано -</p>
+                    <a href="https://htmlacademy.ru">htmlacademy.ru</a>
+                </div>
+            </section>
+        </div>
+    </footer>
   </body>
 </html>
