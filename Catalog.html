@@ -10,7 +10,7 @@
             <div class="centeredContainer">
                 <div class="leftAligned">
                     <a href="#" class="headerHomeLink">Техномарт</a>
-                    <button href="#" class="headerSearchButton">Поиск:</button>
+                    <button class="headerSearchButton">Поиск:</button>
                 </div>
                 <ul class="rightAligned">
                     <li>
@@ -93,8 +93,14 @@
                     <div class="filterSection">
                         <h3>Цена:</h3>
                         <div class="catalogColorBlock">
-                            <!-- Здесь просто slider не подходит, нужен контроль с двумя inputs. 
-                                 Есть, вроде бы, что-то подобное в jquery, но подробнее пока не вникал. -->
+                            <!-- 
+                                Юрий: Здесь просто slider не подходит, нужен контроль с двумя inputs. 
+                                      Есть, вроде бы, что-то подобное в jquery, но подробнее пока не вникал.
+
+                                Николай: Допускается стилизовать это с помощью обычных div 
+                            
+                                Юрий: если можно, я это потом отдельно проработаю.    
+                            -->
                         </div>
                         <div>
                         <label class="catalogColorBlock" id="priceFrom">0</label> -
@@ -128,7 +134,7 @@
                                 <input type="radio" name="feeding" value="Battery" /><label>Аккумуляторные</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="feeding" value="Cable" /><label>Сетевые</label>
+                                <input type="radio" name="feeding" value="Cable" /><label>Сетевые</label>
                             </li>
                         </ul>
                         <button class="btn" type="submit">Показать</button>
@@ -162,70 +168,125 @@
                 </div>
                 <div class="gallerySection">
                     <article class="galleryItem">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG9000.jpg" />
-                        </a>
-                        <a href="#">Перфоратор BOSCH BFG 9000</a>
-                        <p class="formerPrice">32 500 p.</p>
-                        <div class="discountPrice">25 500 p.</div>
-                    </article>
-                    <article class="galleryItem">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG3000.jpg" />
-                        </a>
-                        <a href="#">Перфоратор BOSCH BFG 9000</a>
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG3000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
+                        <a href="#">Перфоратор BOSCH BFG 3000</a>
                         <p class="formerPrice">22 500 p.</p>
                         <div class="discountPrice">15 500 p.</div>
                     </article>
-                    <article class="galleryItem new">
-                        <a href="#" class="btn catalogBuyBtn">Купить</a>
-                        <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                    <article class="galleryItem">
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG6000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
                         <a href="#">Перфоратор BOSCH BFG 6000</a>
                         <p class="formerPrice">30 500 p.</p>
                         <div class="discountPrice">25 500 p.</div>
                     </article>
                     <article class="galleryItem new">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG2000.jpg" />
-                        </a>
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG2000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
                         <a href="#">Перфоратор BOSCH BFG 2000</a>
                         <div class="discountPrice">12 500 p.</div>
                     </article>
-                    <article class="galleryItem new">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG9000.jpg" />
-                        </a>
-                        <a href="#">Перфоратор BOSCH BFG 9000</a>
-                        <p class="formerPrice">32 500 p.</p>
-                        <div class="discountPrice">25 500 p.</div>
-                    </article>
                     <article class="galleryItem">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG3000.jpg" />
-                        </a>
-                        <a href="#">Перфоратор BOSCH BFG 9000</a>
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG3000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
+                        <a href="#">Перфоратор BOSCH BFG 3000</a>
                         <p class="formerPrice">22 500 p.</p>
                         <div class="discountPrice">15 500 p.</div>
                     </article>
                     <article class="galleryItem new">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG6000.jpg" />
-                        </a>
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG6000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
                         <a href="#">Перфоратор BOSCH BFG 6000</a>
                         <p class="formerPrice">30 500 p.</p>
                         <div class="discountPrice">25 500 p.</div>
                     </article>
                     <article class="galleryItem new">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG2000.jpg" />
-                        </a>
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG2000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
                         <a href="#">Перфоратор BOSCH BFG 2000</a>
                         <div class="discountPrice">12 500 p.</div>
                     </article>
                     <article class="galleryItem new">
-                        <a href="#">
-                            <img src="img\stock\BoschBFG2000.jpg" />
-                        </a>
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG3000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
+                        <a href="#">Перфоратор BOSCH BFG 3000</a>
+                        <p class="formerPrice">22 500 p.</p>
+                        <div class="discountPrice">15 500 p.</div>
+                    </article>
+                    <article class="galleryItem new">
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG6000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
+                        <a href="#">Перфоратор BOSCH BFG 6000</a>
+                        <p class="formerPrice">30 500 p.</p>
+                        <div class="discountPrice">25 500 p.</div>
+                    </article>
+                    <article class="galleryItem new">
+                        <div class="galleryItemPicture">
+                            <a href="#">
+                                <img src="img\stock\BoschBFG2000.jpg" />
+                            </a>
+                        </div>
+                        <div class="galleryItemActions">
+                            <a href="#" class="btn catalogBuyBtn">Купить</a>
+                            <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                        </div>
                         <a href="#">Перфоратор BOSCH BFG 2000</a>
                         <div class="discountPrice">12 500 p.</div>
                     </article>
@@ -233,6 +294,7 @@
                 <div class="pagination">
                     <ul class="paginationList">
                         <li class="btn">
+                            <!-- Текущий пункт пагинации должен быть без ссылки, просто li с текстом внутри -->
                             <a href="#" class="paginationLink paginationLinkActive">1</a>
                         </li>
                         <li class="btn paginationItemActive">
@@ -261,6 +323,7 @@
                 <div class="leftAligned">
                     <a href="#" class="footerHomeLink">Техномарт</a>
                     <section>
+                        <!-- Николай: Лучше заменить на div, проще будет стилизовать -->
                         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
                         <a href="tel:78125550555">+7 (812) 555-05-55</a>
                     </section>

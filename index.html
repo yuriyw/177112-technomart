@@ -11,10 +11,11 @@
                 <div class="leftAligned">
                     <a href="#" class="headerHomeLink">Техномарт</a>
                     <button href="#" class="headerSearchButton">Поиск:</button>
+                    <input type="text" id="searchInput" />
                 </div>
                 <ul class="rightAligned">
                     <li>
-                        <a href="#" class="headerBookmarksLink">Закладки: <span id="bokmarkCount">0</span></a>
+                        <a href="#" class="headerBookmarksLink">Закладки: <span id="bookmarkCount">0</span></a>
                     </li>
                     <li>
                         <a href="#" class="headerCartLink">Корзина: <span id="cartCount">0</span></a>
@@ -29,10 +30,11 @@
             <div class="centeredContainer">
                 <div class="siteHeaderMiddle">
                     <section class="redText">
-                        <em>Интернет-магазин строительных материалов и инструментов для ремонта.</em>
+                        Интернет-магазин строительных материалов и инструментов для ремонта.
                     </section>
                     <section>
                         <a href="tel:78125550555" class="redText headerPhoneLink">+7 (812) 555-05-55</a>
+                        <!-- Николай: Лучше заменить p на div, будет проще стилизовать в будущем -->
                         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
                     </section>
                     <div>
@@ -70,13 +72,6 @@
     </header>
     <main>
         <div class="centeredContainer">
-            <!--
-            Здесь я не совсем понял структуру. Зачем, например, в прямоугольнике "Материалы" стоит кнопка "на любой вкус".
-            Дизайнерски это симпатично. Но функционально --- что это? Ссылка внутри ссылки?
-            Покамест рутинно решил, что ссылка --- только кнопка, а не весь прямоугольник.
-
-            Большая картинка идёт с классом selectedCategoryItem и, наверное, будет иметь rowspan и colspan.
-            -->
             <div class="categoriesTable">
                 <div class="categoriesRow">
                     <div class="categoryItem materialsCategoryItem new">
@@ -92,18 +87,35 @@
                         <a href="#" class="btn darkened">Для стройки</a>
                     </div>
 
-                    <div class="categoryItem selectedCategoryItem">
-                        <!-- Здесь я не был уверен, не поставить ли картинку фоном. -->
-                        <img src="img\categories\Perforators.jpg" class="categoryImage" />
-                        <div class="selectedCategoryItemTop darkened">
-                            <h2>Перфораторы</h2>
-                            <p>Настоящие мужские игрушки</p>
+                    <div class="categoryItem categorySlider">
+                        <div class="categorySliderItem">
+                            <img src="img\categories\Perforators.jpg" class="categoryImage" />
+                            <div class="selectedCategoryItemTop darkened">
+                                <h2>Перфораторы</h2>
+                                <p>Настоящие мужские игрушки</p>
+                            </div>
+                            <a href="#" class="btn redBtn">Открыть каталог</a>
                         </div>
-                        <div class="categoryPaginator">
+                        <div class="categorySliderItem">
+                            <img src="img\categories\Drills.jpg" class="categoryImage" />
+                            <div class="selectedCategoryItemTop darkened">
+                                <h2>Дрели</h2>
+                                <p>Соседям на радость</p>
+                            </div>
+                            <a href="#" class="btn redBtn">Открыть каталог</a>
+                        </div>
+                        <div class="arrowNavigator">
                             <a href="#" class="previous"><</a>
                             <a href="#" class="next">></a>
                         </div>
-                        <a href="#" class="btn redBtn">Открыть каталог</a>
+                        <ul class="dotsNavigator">
+                            <li>
+                                <a href="#" />
+                            </li>
+                            <li>
+                                <a href="#" />
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="categoryItem discountsCategoryItem">
@@ -122,33 +134,72 @@
                     <a href="#" class="btn redBtn">Все популярные товары</a>
                 </div>
                 <article class="galleryItem">
-                    <a href="#">
-                        <img src="img\stock\BoschBFG9000.jpg" />
-                    </a>
-                    <a href="#">Перфоратор BOSCH BFG 9000</a>
+                    <div class="galleryItemPicture">
+                        <a href="#">
+                            <img src="img\stock\BoschBFG9000.jpg" />
+                        </a>
+                    </div>
+                    <div class="galleryItemActions">
+                        <a href="#" class="btn catalogBuyBtn">Купить</a>
+                        <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                    </div>
+                    <div>
+                        <a href="#">Перфоратор BOSCH BFG 9000</a>
+                    </div>
+
+                    <!-- Николай: Р лучше заменить на блок -->
                     <p class="formerPrice">32 500 p.</p>
                     <div class="discountPrice">25 500 p.</div>
+                    
+                    <!-- Николай: Обрати внимание, что еще должен быть блок с ссылками, 
+                    который появляется, когда мы наводим на картинку и блок, который будет отображать бирку NEW. 
+                    Их можно сделать внутри блока с товаром, где-нибудь внизу
+
+                    Юрий: блок с кнопками сделал, но пока поставил не внизу --- потом пойму, почему лучше внизу. 
+                          А блок для "new" .... не хотелось везде вставлять, поскольку не везде надо ..... я, если можно, подумаю потом, 
+                          есть ли какой-то генерный механизм это сделать (ты, может, и заранее знаешь, что его нет --- но мне подумать будет 
+                          полезно), если не придумаю --- вставлю блоки.
+                    -->
+
                 </article>
                 <article class="galleryItem">
-                    <a href="#">
-                        <img src="img\stock\BoschBFG3000.jpg" />
-                    </a>
+                    <div class="galleryItemPicture">
+                        <a href="#">
+                            <img src="img\stock\BoschBFG3000.jpg" />
+                        </a>
+                    </div>
+                    <div class="galleryItemActions">
+                        <a href="#" class="btn catalogBuyBtn">Купить</a>
+                        <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                    </div>
                     <a href="#">Перфоратор BOSCH BFG 9000</a>
                     <p class="formerPrice">22 500 p.</p>
                     <div class="discountPrice">15 500 p.</div>
                 </article>
                 <article class="galleryItem">
-                    <a href="#">
-                        <img src="img\stock\BoschBFG6000.jpg" />
-                    </a>
+                    <div class="galleryItemPicture">
+                        <a href="#">
+                            <img src="img\stock\BoschBFG6000.jpg" />
+                        </a>
+                    </div>
+                    <div class="galleryItemActions">
+                        <a href="#" class="btn catalogBuyBtn">Купить</a>
+                        <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                    </div>
                     <a href="#">Перфоратор BOSCH BFG 6000</a>
                     <p class="formerPrice">30 500 p.</p>
                     <div class="discountPrice">25 500 p.</div>
                 </article>
                 <article class="galleryItem new">
-                    <a href="#">
-                        <img src="img\stock\BoschBFG2000.jpg" />
-                    </a>
+                    <div class="galleryItemPicture">
+                        <a href="#">
+                            <img src="img\stock\BoschBFG2000.jpg" />
+                        </a>
+                    </div>
+                    <div class="galleryItemActions">
+                        <a href="#" class="btn catalogBuyBtn">Купить</a>
+                        <a href="#" class="btn catalogBookmarkBtn">В закладки</a>
+                    </div>
                     <a href="#">Перфоратор BOSCH BFG 2000</a>
                     <div class="discountPrice">12 500 p.</div>
                 </article>
@@ -158,31 +209,46 @@
                     <h2>Популярные производители</h2>
                     <a href="#" class="btn redBtn">Все производители</a>
                 </div>
-                <!-- Тут пока не стал ни делать <ul>, ни оборачивать каждую ссылку в <div> --- хотя были обе мысли. -->
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\Bosch.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\Makita.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\DeWalt.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\Interskon.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\Hitachi.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\LG.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\AEG.jpg" />
-                </a>
-                <a href="#" class="galleryItem">
-                    <img src="img\logos\Metabo.jpg" />
-                </a>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\Bosch.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#" class="galleryItem">
+                        <img src="img\logos\Makita.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\DeWalt.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\Interskon.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\Hitachi.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\LG.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\AEG.jpg" />
+                    </a>
+                </div>
+                <div class="galleryItem">
+                    <a href="#">
+                        <img src="img\logos\Metabo.jpg" />
+                    </a>
+                </div>
             </section>
         </div> <!-- End of centeredContainer -->
         <section class="servicesBlock">
@@ -190,17 +256,43 @@
                 <h2>Сервисы</h2>
                 <p>Хороший интернет-магазин отличается от плохого не только ценами! 
                     Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-                <div class="serviceSpheres">
-                    <ul class="serviceSpheresList">
-                        <!-- Хотел попробовать выбор аттрибутом (selected) --- так ведь тоже можно, да? -->
-                        <li selected>Доставка</li>
-                        <li>Гарантия</li>
-                        <li>Кредит</li>
-                    </ul>
-                    <div>
-                        <h2>Доставка</h2>
-                        <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! 
-                            Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
+            </div>
+            <div class="serviceSpheres">
+                <ul class="serviceSpheresList">
+                    <li class="selected">Доставка</li>
+                    <li>Гарантия</li>
+                    <li>Кредит</li>
+                </ul>
+                <div>
+                    <div class="serviceSphere">
+                        <div>
+                            <h2>Доставка</h2>
+                            <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! 
+                                Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
+                        </div>
+                        <div>
+                            <img src="img\Delivery.png" />
+                        </div>
+                    </div>
+                    <div class="serviceSphere">
+                        <div>
+                            <h2>Гарантия</h2>
+                            <p>Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгаранием,                                 вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж восстановите 
+                                как-нибудь сами.</p>
+                        </div>
+                        <div>
+                            <img src="img\Guarantee.png" />
+                        </div>
+                    </div>
+                    <div class="serviceSphere">
+                        <div>
+                            <h2>Кредит</h2>
+                            <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
+                            <a href="#" class="btn redBtn">Отправить заявку</a>
+                        </div>
+                        <div>
+                            <img src="img\Credit.png" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,7 +316,7 @@
             <section class="rightAligned">
                 <h2>Контакты</h2>
                 <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-                <!-- Тут надо ставить контроль Google maps --- позже сделаю -->
+                <!-- TBD: контроль Google maps --- позже сделаю -->
                 <a href="#" class="btn redBtn">Заблудились? Напишите нам!</a>
             </section>
         </div>
@@ -235,6 +327,7 @@
                 <div class="leftAligned">
                     <a href="#" class="footerHomeLink">Техномарт</a>
                     <section>
+                        <!-- Николай: Лучше заменить на div, проще будет стилизовать -->
                         <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
                         <a href="tel:78125550555">+7 (812) 555-05-55</a>
                     </section>
@@ -284,18 +377,20 @@
                     <a class="socialBtnVK" href="#">Вконтакте</a>
                 </li>
                 <li class="socialBtn">
-                    <a class="socialBtn socialBtnFB" href="#">Фейсбук</a>
+                    <a class="socialBtnFB" href="#">Фейсбук</a>
                 </li>
                 <li class="socialBtn">
-                    <a class="socialBtn socialBtnINST" href="#">Инстаграм</a>
+                    <a class="socialBtnINST" href="#">Инстаграм</a>
                 </li>
             </ul>
             <section class="footerDeveloperContacts">
                 <div class="leftAligned">
+                    <!-- Николай: Заменить на div -->
                     <p>Обратная связь:</p>
                     <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
                 </div>
                 <div class="rightAligned">
+                    <!-- Заменить на div -->
                     <p>Разработано -</p>
                     <a href="https://htmlacademy.ru">htmlacademy.ru</a>
                 </div>
